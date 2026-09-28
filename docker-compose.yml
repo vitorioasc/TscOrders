@@ -1,0 +1,34 @@
+services:
+  tscorders-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ConnectionStrings__DefaultConnection: "Data Source=/app/data/tscorders.db"
+      Jwt__Issuer: "TscOrders.Api"
+      Jwt__Audience: "TscOrders.Client"
+      Jwt__SecretKey: "sk_live_ShVlVtPWfjOXQT7vJE4a3yWWkM8CwOcM"
+      Jwt__ExpirationMinutes: "60"
+    volumes:
+      - tscorders-data:/app/data
+
+  sonarqube:
+    image: sonarqube:community
+    profiles: ["quality"]
+    ports:
+      - "9000:9000"
+    environment:
+      SONAR_ES_BOOTSTRAP_CHECKS_DISABLE: "true"
+    volumes:
+      - sonarqube-data:/opt/sonarqube/data
+      - sonarqube-extensions:/opt/sonarqube/extensions
+      - sonarqube-logs:/opt/sonarqube/logs
+
+volumes:
+  tscorders-data:
+  sonarqube-data:
+  sonarqube-extensions:
+  sonarqube-logs:

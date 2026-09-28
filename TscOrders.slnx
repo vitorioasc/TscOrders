@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="TscOrders.Core.Abstraction/TscOrders.Core.Abstraction.csproj" />
+  <Project Path="TscOrders.Core/TscOrders.Core.csproj" />
+  <Project Path="TscOrders.Data.Abstraction/TscOrders.Data.Abstraction.csproj" />
+  <Project Path="TscOrders.Data/TscOrders.Data.csproj" />
+  <Project Path="TscOrders.Tests/TscOrders.Tests.csproj" />
+  <Project Path="TscOrders.WebApi/TscOrders.WebApi.csproj" />
+</Solution>
