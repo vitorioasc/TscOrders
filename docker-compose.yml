@@ -10,7 +10,7 @@ services:
       ConnectionStrings__DefaultConnection: "Data Source=/app/data/tscorders.db"
       Jwt__Issuer: "TscOrders.Api"
       Jwt__Audience: "TscOrders.Client"
-      Jwt__SecretKey: "sk_stg_ShVlVtPWfjOXQT7vJE4a3yWWkM8CwOcM"
+      Jwt__SecretKey: "ShVlVtPWfjOXQT7vJE4a3yWWkM8CwOcM"
       Jwt__ExpirationMinutes: "60"
     volumes:
       - tscorders-data:/app/data
